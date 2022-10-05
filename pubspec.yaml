@@ -75,6 +75,17 @@ flutter:
   assets:
     - assets/images/
 
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/nunito/Nunito-Black.ttf
+
+    - family: Nunito-Light
+      fonts:
+        - asset: assets/fonts/nunito/Nunito-Light.ttf
+
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
