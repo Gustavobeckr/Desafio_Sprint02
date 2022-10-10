@@ -1,15 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/components/Cards.dart';
 import 'package:fruit_hub/components/PopularCombo.dart';
 import 'package:fruit_hub/components/RecommendedCombo.dart';
 
-
 class HomeScreen extends StatelessWidget {
   late final double? iconSize;
   late final Color? color;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -21,27 +17,28 @@ class HomeScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(15, 40, 15, 20),
                 child: SizedBox(
-                  width: 365,
+                  width: double.infinity,
                   height: 45,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.drag_handle_outlined,
-                        size: 35,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 0, 70, 0),
-                        child: Text(
-                          "Welcome, NameController",
-                          style: TextStyle(
-                              fontSize: 17, fontFamily: 'Nunito-Medium'),
-                        ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.drag_handle_outlined,
+                            size: 35,
+                          ),
+                          Text(
+                            "Welcome, NameController",
+                            style: TextStyle(
+                                fontSize: 17, fontFamily: 'Nunito-Medium'),
+                          ),
+                        ],
                       ),
                       IconButton(
                         style: ButtonStyle(
                           backgroundColor:
-                          MaterialStateProperty.all(Colors.red),
+                              MaterialStateProperty.all(Colors.red),
                         ),
                         splashColor: Colors.red,
                         iconSize: 35,
@@ -56,13 +53,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30, 0, 30, 10),
+              SizedBox(
+                width: 390,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width: 300,
+                      width: 275,
                       child: TextField(
                         decoration: InputDecoration(
                           fillColor: Color.fromRGBO(245, 245, 245, 0.4),
@@ -213,9 +210,12 @@ class HomeScreen extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             children: [
                               Wrap(children: [
-                                PopularCombo('assets/images/QuinoaFruit.png','Quinoa fruit salad'),
-                                PopularCombo('assets/images/PratoBerry.png', 'Tropical fruit salad'),
-                                PopularCombo('assets/images/QuinoaFruit.png', 'Quinoa fruit salad')
+                                PopularCombo('assets/images/QuinoaFruit.png',
+                                    'Quinoa fruit salad'),
+                                PopularCombo('assets/images/PratoBerry.png',
+                                    'Tropical fruit salad'),
+                                PopularCombo('assets/images/QuinoaFruit.png',
+                                    'Quinoa fruit salad')
                               ]),
                             ]),
                       ),
