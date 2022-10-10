@@ -88,6 +88,9 @@ flutter:
       fonts:
         - asset: assets/fonts/nunito/Nunito-Medium.ttf
 
+    - family: Nunito-Bold
+      fonts:
+        - asset: assets/fonts/nunito/Nunito-Bold.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

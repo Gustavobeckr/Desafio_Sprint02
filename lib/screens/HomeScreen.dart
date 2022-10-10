@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub/components/Cards.dart';
 import 'package:fruit_hub/components/PopularCombo.dart';
 import 'package:fruit_hub/components/RecommendedCombo.dart';
-import 'package:fruit_hub/main.dart';
+
 
 class HomeScreen extends StatelessWidget {
   late final double? iconSize;
