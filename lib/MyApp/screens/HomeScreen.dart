@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/components/Cards.dart';
-import 'package:fruit_hub/components/PopularCombo.dart';
-import 'package:fruit_hub/components/RecommendedCombo.dart';
+import 'package:fruit_hub/MyApp/App.dart';
+import 'package:fruit_hub/MyApp/components/Cards.dart';
+import 'package:fruit_hub/MyApp/components/PopularCombo.dart';
+import 'package:fruit_hub/MyApp/components/RecommendedCombo.dart';
 
 class HomeScreen extends StatelessWidget {
   late final double? iconSize;
@@ -9,6 +10,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Map? data = ModalRoute.of(context)?.settings.arguments as Map?;
+    String name = data!['name'];
+
     return Scaffold(
       body: ListView(
         children: [
@@ -29,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                             size: 35,
                           ),
                           Text(
-                            "Welcome, NameController",
+                            "Welcome, $name",
                             style: TextStyle(
                                 fontSize: 17, fontFamily: 'Nunito-Medium'),
                           ),
@@ -47,7 +52,9 @@ class HomeScreen extends StatelessWidget {
                           Icons.shopping_cart_outlined,
                           color: Color.fromRGBO(255, 164, 81, 1),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(MyApp.ORDER_LIST);
+                        },
                       ),
                     ],
                   ),

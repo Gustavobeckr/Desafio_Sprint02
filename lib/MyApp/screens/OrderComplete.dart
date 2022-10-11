@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/MyApp/App.dart';
 
 class OrderComplete extends StatelessWidget {
   final ButtonStyle style = ElevatedButton.styleFrom(
@@ -51,7 +52,9 @@ class OrderComplete extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: style,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pop(MyApp.HOME);
+                  },
                   child: Text(
                     "Continue shopping",
                     style: TextStyle(

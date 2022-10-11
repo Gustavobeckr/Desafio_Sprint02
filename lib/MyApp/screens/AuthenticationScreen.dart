@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/MyApp/App.dart';
 
-class Authentication extends StatelessWidget {
+class Authentication extends StatefulWidget {
 
+  @override
+  State<Authentication> createState() => _AuthenticationState();
+}
+
+class _AuthenticationState extends State<Authentication> {
   TextEditingController nameController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
+
+    void OpenSecondScreen(){
+      Navigator.of(context).pushReplacementNamed(MyApp.HOME,
+      arguments: {'name': nameController.value.text}
+      );
+
+    }
+
     final ButtonStyle style = ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
         fixedSize: Size(300, 56),
         backgroundColor: Color.fromRGBO(255, 164, 81, 1),
         textStyle: const TextStyle(fontSize: 16));
@@ -127,9 +143,9 @@ class Authentication extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                         child: ElevatedButton(
                           style: style,
-                          onPressed: () {
-                            print(nameController.text);
-                          },
+                          onPressed: () =>
+                            OpenSecondScreen(),
+
                           child: Text(
                             "Start Ordering",
                           ),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/MyApp/App.dart';
 
-class RecommendedCombo extends StatelessWidget {
+class PopularCombo extends StatelessWidget {
   final image;
   final String name;
+  int ValorPopProduct = 10;
 
-  int ValorRProduct = 2;
-
-  RecommendedCombo(this.image, String this.name);
+  PopularCombo(this.image, this.name);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,8 @@ class RecommendedCombo extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20), color: Colors.white),
+            borderRadius: BorderRadius.circular(20),
+            color: Color.fromRGBO(255, 252, 242, 1)),
         width: 160,
         height: 162,
         child: Column(
@@ -41,14 +42,19 @@ class RecommendedCombo extends StatelessWidget {
               width: 155,
               height: 60,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    "$name",
-                    style: TextStyle(fontFamily: "Nunito-Medium", fontSize: 14),
+                  SizedBox(
+                    height: 17,
+                    child: Text(
+                      "$name",
+                      style:
+                          TextStyle(fontFamily: "Nunito-Medium", fontSize: 14),
+                    ),
                   ),
                   SizedBox(
-                    height: 41,
+                    height: 40,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,7 +66,7 @@ class RecommendedCombo extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "$ValorRProduct,000",
+                          "$ValorPopProduct,000",
                           style: TextStyle(
                             color: Color.fromRGBO(255, 164, 81, 1),
                           ),
@@ -68,7 +74,9 @@ class RecommendedCombo extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(25, 0, 6, 0),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).pushNamed(MyApp.ADD_BASKET);
+                            },
                             icon: Icon(Icons.add),
                             color: Color.fromRGBO(255, 164, 81, 1),
                           ),

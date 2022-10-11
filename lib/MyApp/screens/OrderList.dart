@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/components/ItemBasket.dart';
-
+import 'package:fruit_hub/MyApp/App.dart';
+import 'package:fruit_hub/MyApp/components/ItemBasket.dart';
 
 class OrderList extends StatefulWidget {
   @override
@@ -9,15 +9,26 @@ class OrderList extends StatefulWidget {
 
 class _OrderListState extends State<OrderList> {
   final ButtonStyle style = ElevatedButton.styleFrom(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
       fixedSize: Size(190, 49),
       backgroundColor: Color.fromRGBO(255, 164, 81, 1),
       textStyle: const TextStyle(fontSize: 16));
 
+  final ButtonStyle GoBackButton = ElevatedButton.styleFrom(
+      fixedSize: Size(100, 30),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      backgroundColor: Colors.white,
+      textStyle: const TextStyle(fontSize: 13));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children:[SizedBox(
+      body: ListView(children: [
+        SizedBox(
           width: double.infinity,
           height: 683.4,
           child: Column(
@@ -28,16 +39,38 @@ class _OrderListState extends State<OrderList> {
                 ),
                 width: 411.4,
                 height: 120,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    'My Basket',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontFamily: 'Nunito-Medium'),
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                      child: TextButton.icon(
+                        style: GoBackButton,
+                        onPressed: () {
+                          Navigator.of(context).pop(MyApp.HOME);
+                        },
+                        icon: Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          color: Colors.black,
+                        ),
+                        label: Text(
+                          'Go back',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        'My Basket',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontFamily: 'Nunito-Medium'),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Container(
@@ -76,7 +109,8 @@ class _OrderListState extends State<OrderList> {
                             Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.fromLTRB(0, 8, 5, 8),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 8, 5, 8),
                                   child: Image.asset(
                                     'assets/images/BlackCoin.png',
                                   ),
@@ -94,7 +128,9 @@ class _OrderListState extends State<OrderList> {
                       ),
                       ElevatedButton(
                           style: style,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushReplacementNamed(MyApp.ORDER_COMPLETE);
+                          },
                           child: Text(
                             "Checkout",
                           )),
@@ -104,8 +140,8 @@ class _OrderListState extends State<OrderList> {
               ),
             ],
           ),
-        ),]
-      ),
+        ),
+      ]),
     );
   }
 }
