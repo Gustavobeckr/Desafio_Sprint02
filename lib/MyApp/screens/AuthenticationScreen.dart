@@ -10,8 +10,12 @@ class Authentication extends StatefulWidget {
 class _AuthenticationState extends State<Authentication> {
   TextEditingController nameController = TextEditingController();
 
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
+
+    key: _formKey;
 
     void OpenSecondScreen(){
       Navigator.of(context).pushReplacementNamed(MyApp.HOME,

@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 
 class ItemBasket extends StatelessWidget {
+  final String nameProduct;
+  final String imageAsset;
+  final int quantidadeProduto;
+  final int valorProduto;
+
+  ItemBasket(
+    String this.imageAsset,
+    this.nameProduct,
+    this.quantidadeProduto,
+    this.valorProduto,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,7 +31,7 @@ class ItemBasket extends StatelessWidget {
                     width: 60,
                     child: Padding(
                       padding: const EdgeInsets.all(3.0),
-                      child: Image.asset('assets/images/PratoBerry.png'),
+                      child: Image.asset('$imageAsset'),
                     ),
                   ),
                   SizedBox(
@@ -31,7 +43,7 @@ class ItemBasket extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            "Quinoa fruit salad",
+                            "$nameProduct",
                             style: TextStyle(
                               fontFamily: 'Nunito',
                               fontSize: 16,
@@ -39,7 +51,7 @@ class ItemBasket extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "2packs",
+                            "$quantidadeProduto packs",
                             style: TextStyle(
                               fontFamily: 'Nunito-Light',
                               fontSize: 15,
@@ -58,7 +70,7 @@ class ItemBasket extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                '20,000',
+                                '$valorProduto,000',
                                 style: TextStyle(
                                     fontSize: 15,
                                     color: Color.fromRGBO(39, 33, 77, 1)),

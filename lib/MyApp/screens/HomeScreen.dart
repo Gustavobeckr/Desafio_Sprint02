@@ -4,17 +4,38 @@ import 'package:fruit_hub/MyApp/components/Cards.dart';
 import 'package:fruit_hub/MyApp/components/PopularCombo.dart';
 import 'package:fruit_hub/MyApp/components/RecommendedCombo.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   late final double? iconSize;
   late final Color? color;
 
+  // static List<String> nameProduct = [
+  //   'Quinoa fruit salad',
+  //   'Tropical fruit salad',
+  //   'Quinoa fruit salad'
+  // ];
+  // static List<String> imageAsset = [
+  //   'assets/images/QuinoaFruit.png',
+  //   'assets/images/PratoBerry.png',
+  //   'assets/images/QuinoaFruit.png',
+  // ];
+
+  // final List<ItemProduct> itemProduct = List.generate(
+  //   nameProduct.length,
+  //       (index) =>
+  //       ItemProduct('${nameProduct[index]}', '${imageAsset[index]}'),);
+
   @override
   Widget build(BuildContext context) {
-
     Map? data = ModalRoute.of(context)?.settings.arguments as Map?;
     String name = data!['name'];
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
           Column(
@@ -211,21 +232,28 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 165,
-                        width: 365,
-                        child: ListView(
+                          height: 165,
+                          width: 365,
+                          child: ListView(
                             scrollDirection: Axis.horizontal,
                             children: [
-                              Wrap(children: [
-                                PopularCombo('assets/images/QuinoaFruit.png',
-                                    'Quinoa fruit salad'),
-                                PopularCombo('assets/images/PratoBerry.png',
-                                    'Tropical fruit salad'),
-                                PopularCombo('assets/images/QuinoaFruit.png',
-                                    'Quinoa fruit salad')
-                              ]),
-                            ]),
-                      ),
+                              Wrap(
+                                children: [
+                                  PopularCombo('assets/images/PratoBerry.png',
+                                      'Fruit sald'),PopularCombo('assets/images/PratoBerry.png',
+                                      'Fruit sald'),PopularCombo('assets/images/PratoBerry.png',
+                                      'Fruit sald'),
+                                ],
+                              )
+                            ],
+                          )
+                          // .builder(
+                          //   scrollDirection: Axis.horizontal,
+                          //   itemCount: itemProduct.length,
+                          //   itemBuilder: (context, index) {
+                          //     return PopularCombo(itemProduct[index].imageAsset, itemProduct[index].nameProduct);
+                          //   },),
+                          ),
                     ],
                   ),
                 ),

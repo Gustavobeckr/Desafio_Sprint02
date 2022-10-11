@@ -1,6 +1,5 @@
 // import 'package:flutter/material.dart';
-// import 'package:fruit_hub/MyApp/components/PopularCombo.dart';
-// import 'package:fruit_hub/MyApp/components/RecommendedCombo.dart';
+// import 'package:fruit_hub/MyApp/components/ItemBasket.dart';
 //
 // class ProductInherited extends InheritedWidget {
 //   ProductInherited({
@@ -8,17 +7,13 @@
 //     required Widget child,
 //   }) : super(key: key, child: child);
 //
-//   final List<PopularCombo>ProductList = [
-//     PopularCombo('assets/images/QuinoaFruit.png',
-//         'Quinoa fruit salad'),
-//     PopularCombo('assets/images/PratoBerry.png',
-//         'Tropical fruit salad'),
-//     PopularCombo('assets/images/QuinoaFruit.png',
-//         'Quinoa fruit salad'),
+//   final List<ItemBasket>ProductList = [
+//     ItemBasket("assets/images/PratoBerry.png", 'Quinoa fruit salad', 4, 40),
+//     ItemBasket('assets/images/QuinoaFruit.png', 'Melon fruit salad', 2, 20),
 //   ];
 //
-//   void NewProductList(String imageAsset, String nameProduct){
-//     ProductList.add(PopularCombo(imageAsset, nameProduct));
+//   void NewProductList(String imageAsset, String nameProduct, int quantidadeProduto, int valorProduto){
+//     ProductList.add(ItemBasket(imageAsset, nameProduct, quantidadeProduto, valorProduto));
 //   }
 //
 //   static ProductInherited of(BuildContext context) {
@@ -30,6 +25,6 @@
 //
 //   @override
 //   bool updateShouldNotify(ProductInherited old) {
-//     return;
+//     return old.ProductList.length != ProductList.length;
 //   }
 // }

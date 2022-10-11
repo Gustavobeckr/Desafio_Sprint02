@@ -16,6 +16,7 @@ class WelcomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Stack(
                 children: [
@@ -29,8 +30,8 @@ class WelcomeScreen extends StatelessWidget {
                         color: Color.fromRGBO(255, 164, 81, 1)),
                     child: Stack(children: [
                       Padding(
-                          padding: const EdgeInsets.fromLTRB(
-                              40.0, 130.0, 20.0, 4.0),
+                          padding:
+                              const EdgeInsets.fromLTRB(40.0, 130.0, 20.0, 4.0),
                           child: Image.asset(
                             'assets/images/welcome_fruits.png',
                           )),
@@ -44,7 +45,7 @@ class WelcomeScreen extends StatelessWidget {
                     ]),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(51.7, 400, 51.7, 50),
+                    padding: const EdgeInsets.fromLTRB(51.7, 400, 51.7, 40),
                     child: ClipOval(
                       child: Container(
                         width: 300,
@@ -57,11 +58,10 @@ class WelcomeScreen extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Container(
+                padding: const EdgeInsets.fromLTRB(5, 10, 5, 5),
+                child: SizedBox(
                   height: 200,
                   width: 350,
-                  // color: Colors.red,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

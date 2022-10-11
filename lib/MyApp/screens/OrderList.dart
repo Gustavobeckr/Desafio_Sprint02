@@ -80,7 +80,10 @@ class _OrderListState extends State<OrderList> {
                 height: 440,
                 child: ListView(
                   children: [
-                    ItemBasket(),
+                    ItemBasket("assets/images/PratoBerry.png",
+                        'Quinoa fruit salad', 4, 40), 
+                    ItemBasket('assets/images/QuinoaFruit.png',
+                        'Melon fruit salad', 2, 20),
                   ],
                 ),
               ),
@@ -129,7 +132,8 @@ class _OrderListState extends State<OrderList> {
                       ElevatedButton(
                           style: style,
                           onPressed: () {
-                            Navigator.of(context).pushReplacementNamed(MyApp.ORDER_COMPLETE);
+                            Navigator.of(context)
+                                .pushReplacementNamed(MyApp.ORDER_COMPLETE);
                           },
                           child: Text(
                             "Checkout",

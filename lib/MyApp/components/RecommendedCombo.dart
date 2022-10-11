@@ -5,7 +5,6 @@ class RecommendedCombo extends StatefulWidget {
   final image;
   final String name;
 
-
   RecommendedCombo(this.image, String this.name);
 
   @override

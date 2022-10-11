@@ -3,6 +3,11 @@ import 'package:fruit_hub/MyApp/App.dart';
 import 'package:fruit_hub/MyApp/components/BasketCards.dart';
 
 class AddBasket extends StatefulWidget {
+  // late final List<ItemProduct> itemProduct;
+  // late int index;
+  //
+  // AddBasket({required this.index, required this.itemProduct});
+
   @override
   State<AddBasket> createState() => _AddBasketState();
 }
@@ -86,7 +91,7 @@ class _AddBasketState extends State<AddBasket> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Quinoa Fruit Salad',
+                          'Quinoa fruit salad',
                           style: TextStyle(
                               fontSize: 23,
                               fontFamily: 'Nunito-Bold',

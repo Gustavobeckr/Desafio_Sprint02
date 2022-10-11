@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/MyApp/data/ProductInherited.dart';
 import 'package:fruit_hub/MyApp/screens/AddToBasket.dart';
 import 'package:fruit_hub/MyApp/screens/AuthenticationScreen.dart';
 import 'package:fruit_hub/MyApp/screens/HomeScreen.dart';
@@ -9,9 +8,9 @@ import 'package:fruit_hub/MyApp/screens/WelcomeScreen.dart';
 
 class MyApp extends StatelessWidget {
 
-  static const FIRST_SCREEN = 'first_screen';
-  static const SECOND_SCREEN = 'second_screen';
-  static const HOME = '/';
+  static const FIRST_SCREEN = '/first_screen';
+  static const SECOND_SCREEN = '/second_screen';
+  static const HOME = '/home';
   static const ADD_BASKET = '/add_basket';
   static const ORDER_LIST = '/order_list';
   static const ORDER_COMPLETE = '/order_complete';
